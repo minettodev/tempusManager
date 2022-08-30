@@ -9,33 +9,34 @@ try {
         ") as $Horario) {
         $Horarios[$Horario['tempo']][$Horario['dia']] = [
             "id" => $Horario['id'],
-            "task" => $Horario['task'],
+            "task" => $Horario['task']
         ];
-
 ?>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Horário</th>
-                    <th>Domingo</th>
-                    <th>Segunda</th>
-                    <th>Terça</th>
-                    <th>Quarta</th>
-                    <th>Quinta</th>
-                    <th>Sexta</th>
-                    <th>Sábado</th>
-                </tr>
-
-            </thead>
-            <tbody>
-                <?php foreach ($Horarios as $hora => $dias) { ?>
+        <div class="container">
+            <table class="table">
+                <thead>
                     <tr>
-                        <td><?php $hora ?></td>
-                        <td><?php $dias ?></td>
+                        <th>Horário</th>
+                        <th>Domingo</th>
+                        <th>Segunda</th>
+                        <th>Terça</th>
+                        <th>Quarta</th>
+                        <th>Quinta</th>
+                        <th>Sexta</th>
+                        <th>Sábado</th>
                     </tr>
-                <?php } ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php foreach ($Horarios as $hora => $dias) { ?>
+                        <tr>
+                            <td><?php $hora ?></td>
+                            <td><?php $dias ?></td>
+                            <td><?php $task ?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
 <?php
     }
     print_r($Horarios);

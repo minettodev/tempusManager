@@ -113,10 +113,10 @@ const carregaTarefas = async () => {
   toggleLoading();
   const [tbody] = document.getElementsByTagName("tbody");
   tbody.innerHTML = "";
-  
+
   const response = await fetch(`${baseUrl}index.php`);
   const tarefas = await response.json();
-  
+
   toggleLoading();
 };
 
